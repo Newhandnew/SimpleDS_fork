@@ -18,6 +18,7 @@ import simpleDS.learning.SimpleEnvironment;
 import simpleDS.networking.SimpleSocketServer;
 import simpleDS.util.ConfigParser;
 import simpleDS.util.Logger;
+import java.util.Scanner;
 
 public class SimpleDS {
 	private ConfigParser configParser;
@@ -67,7 +68,6 @@ public class SimpleDS {
 		configParser.setVerboseMode(simpleAgent.verbose);
 		configParser.setNumDialogues(simpleAgent.dialogues);
 		long numTimeSteps = 0;
-
 		for (int i=1; i<=configParser.numDialogues; i++) {
 			environment.interactionPolicy.resetUserInfo(environment.userSimulator);
 			int steps = 1;
@@ -76,7 +76,7 @@ public class SimpleDS {
 				dict.put("action_sys_val", getSystemAction_Val(dict.get("action_sys_key")));
 				dict.put("response_sys", getSystemResponse(dict.get("action_sys_key")));
 				if (configParser.verbose) {
-					String sys = "["+dict.get("action_sys_key")+"] ["+dict.get("action_sys_val")+"] " +dict.get("response_sys");
+					String sys = "[" + dict.get("response_sys") + "]";//"["+dict.get("action_sys_key")+"] ["+dict.get("action_sys_val")+"] " +dict.get("response_sys");
 					Logger.debug("SympleDS", "IM", steps+" SYS:"+sys);
 				}
 
@@ -171,8 +171,11 @@ public class SimpleDS {
 
 	private String getUserResponse(String action_usr_key) {
 		String response = environment.userSimulator.getResponse(action_usr_key);
-		
+		// System.out.println("====test====, suggest: " + (response));
+		// Scanner scan = new Scanner(System.in);
+		// response = scan.nextLine();
 		if (socketServer != null && response != null){
+			System.out.println("====test====");
 			response = socketServer.listen();
 		}
 		

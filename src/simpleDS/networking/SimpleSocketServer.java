@@ -40,8 +40,20 @@ public class SimpleSocketServer {
 	
 	public String listen() {
 		try {
-				reader = new DataInputStream(clientSocket.getInputStream());
-				return reader.readUTF();
+				byte[] b = new byte[512];
+				String result = "";
+				int length;
+				do {
+					reader = new DataInputStream(clientSocket.getInputStream());
+				//System.out.println(reader.readLine());
+        			} while ((length = reader.read(b)) == 0);
+				System.out.println("finish read");
+				//System.out.println(");
+				//String result = reader.readLine();
+				result = new String(b, 0, length);
+				System.out.println("I got" + result);
+				return result;
+				//return reader.readUTF();
 
 		} catch(Exception e) {
 			Logger.debug(this.getClass().getName(), "listen", "Connection lost");

@@ -1,4 +1,4 @@
-$food:"italian|indian|mexican|chinese|japanese"
-$price:"cheap|reasonably priced|expensive"
+$movie:"action|romance|animation|comedy|suspense"
+$price:"old|new|in ten years"
 $area:"north|south|east|west|centre"
 $more:"no"
