@@ -1,14 +1,10 @@
 SYS:[Salutation(greeting)]"Hello!"
 USR:null
 SYS:[Request(hmihy)]"How can I help you?"
-USR:"I am looking for a new comedy movie in the east of town"
-SYS:[Provide(suggest)]"Would you like action movie? It's good."
-USR:"Yes I did"
+USR:"I am looking for manderin male romance song"
 SYS:[Retrieve(info)]"Let me see."
 USR:null
-SYS:[Provide(known)]"movie X is an excellent choice. It is located in Y."
+SYS:[Provide(known)]"song X is an excellent choice. enjoy!"
 USR:null
-SYS:[AskFor(more)]"Anything else?"
-USR:"no"
 SYS:[Salutation(closing)]"Okay, talk to you soon. Bye!"
 USR:null

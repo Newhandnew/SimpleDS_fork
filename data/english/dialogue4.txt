@@ -1,18 +1,18 @@
 SYS:[Salutation(greeting)]"Hello!"
 USR:null
-SYS:[Request(movie,price,area)]"What type of movie, price range, and area are you looking for?"
-USR:"I am looking for old comedy movie in the south of town"
-SYS:[ExpConfirm(price=$price)]"Did you say old?"
+SYS:[Request(gender)]"What gender of a song would you like, male or female?"
+USR:"I am looking for male song"
+SYS:[ExpConfirm(gender=$gender)]"Did you say male?"
 USR:"Yes I did"
-SYS:[Apology(area)]"Sorry, I didn't get that. What area?"
-USR:"In the south"
-SYS:[ExpConfirm(movie=$movie,area=$area)]"Did you say comedy movie in the south?"
+SYS:[Apology(gender)]"Sorry, I didn't get that. What language?"
+USR:"male"
+SYS:[Request(type)]"What type of song are you looking for, romance or pop?"
+USR:"romance"
+SYS:[ExpConfirm(gender=$gender,type=$type)]"Did you say male romance song?"
 USR:"Yes I did"
 SYS:[Retrieve(info)]"Let me see."
 USR:null
 SYS:[Provide(unknown)]"I'm very sorry, I didn't find a match with those preferences."
 USR:null
-SYS:[AskFor(more)]"Anything else?"
-USR:"no"
 SYS:[Salutation(closing)]"Okay, talk to you soon. Bye!"
 USR:null

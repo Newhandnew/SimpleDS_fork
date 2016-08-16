@@ -1,34 +1,29 @@
 AskFor(more):Confirm(more=$more)
-Request(hmihy):Provide(movie=$movie,price=$price,area=$area)|Provide(movie=$movie,price=$price)|Provide(price=$price,area=$area)
-Request(movie):Provide(movie=$movie)
-Request(price):Provide(price=$price)
-Request(area):Provide(area=$area)
-Request(movie,price):Provide(movie=$movie,price=$price)|Provide(movie=$movie)|Provide(price=$price)
-Request(movie,area):Provide(movie=$movie,area=$area)|Provide(movie=$movie)|Provide(area=$area)
-Request(price,area):Provide(price=$price,area=$area)|Provide(price=$price)|Provide(area=$area)
-Request(movie,price,area):Provide(movie=$movie,price=$price,area=$area)
-Apology(movie):Provide(movie=$movie)
-Apology(price):Provide(price=$price)
-Apology(area):Provide(area=$area)
-Apology(movie,price):Provide(movie=$movie,price=$price)|Provide(movie=$movie)|Provide(price=$price)
-Apology(movie,area):Provide(movie=$movie,area=$area)|Provide(movie=$movie)|Provide(area=$area)
-Apology(price,area):Provide(price=$price,area=$area)|Provide(price=$price)|Provide(area=$area)
-Apology(movie,price,area):Provide(movie=$movie,price=$price,area=$area)|Provide(movie=$movie,price=$price)|Provide(price=$price,area=$area)
-ExpConfirm(movie=$movie):Confirm($yesno)
-ExpConfirm(price=$price):Confirm($yesno)
-ExpConfirm(area=$area):Confirm($yesno)
-ExpConfirm(movie=$movie,price=$price):Confirm($yesno)
-ExpConfirm(movie=$movie,area=$area):Confirm($yesno)
-ExpConfirm(price=$price,area=$area):Confirm($yesno)
-ExpConfirm(movie=$movie,price=$price,area=$area):Confirm($yesno)
+Request(hmihy):Provide(gender=$gender,language=$language,type=$type)|Provide(gender=$gender,language=$language)|Provide(language=$language,type=$type)|Provide(gender=$gender)|Provide(language=$language)|Provide(type=$type)
+Request(gender):Provide(gender=$gender)
+Request(language):Provide(language=$language)
+Request(type):Provide(type=$type)
+Apology(gender):Provide(gender=$gender)
+Apology(language):Provide(language=$language)
+Apology(type):Provide(type=$type)
+Apology(gender,language):Provide(gender=$gender,language=$language)|Provide(gender=$gender)|Provide(language=$language)
+Apology(gender,type):Provide(gender=$gender,type=$type)|Provide(gender=$gender)|Provide(type=$type)
+Apology(language,type):Provide(language=$language,type=$type)|Provide(language=$language)|Provide(type=$type)
+ExpConfirm(gender=$gender):Confirm($yesno)
+ExpConfirm(language=$language):Confirm($yesno)
+ExpConfirm(type=$type):Confirm($yesno)
+ExpConfirm(gender=$gender,language=$language):Confirm($yesno)
+ExpConfirm(gender=$gender,type=$type):Confirm($yesno)
+ExpConfirm(language=$language,type=$type):Confirm($yesno)
+ExpConfirm(gender=$gender,language=$language,type=$type):Confirm($yesno)
 
-Provide(movie=$movie):"I am desperate for $movie movie"|"I am looking for $movie movie"|"I would like $movie movie"|"$movie movie"|"$movie"
-Provide(price=$price):"$price movie"|"Something $price"|"$price"
-Provide(area=$area):"In the $area"|"Around the $area"|"the $area"|"$area"
-Provide(movie=$movie,price=$price):"I need $price $movie movie"|"I would like $price $movie movie"|"$price $movie movie"
-Provide(movie=$movie,area=$area):"I would like $movie movie in the $area"|"I would love $movie movie in the $area"|"$movie movie in the $area"
-Provide(price=$price,area=$area):"I want $price movie in the $area"|"I am looking for $price movie in the $area"|"$price movie in the $area"
-Provide(movie=$movie,price=$price,area=$area):"I am looking for $price $movie movie in the $area of town"|"We are looking for $price $movie movie in the $area"|"$price $movie movie in the $area of town"|"$price $movie movie in the $area of the city"|"$price $movie movie in the $area"
+Provide(gender=$gender):"I am desperate for $gender"|"I am looking for $gender"|"I would like $gender"|"$gender song"|"$gender"
+Provide(language=$language):"$language song"|"Something $language"|"$language"
+Provide(type=$type):"$type song"|"the $type"|"$type"
+Provide(gender=$gender,language=$language):"I need $language $gender song"|"I would like $language $gender song"|"$language $gender"
+Provide(gender=$gender,type=$type):"I would like $gender $type song"|"I would love $gender $type song"|"$gender $type"
+Provide(language=$language,type=$type):"I want $language $type song"|"I am looking for $language $type song"|"$language $type"
+Provide(gender=$gender,language=$language,type=$type):"I am looking for $language $gender $type of song"|"We are looking for $language $gender $type song"|"$language $gender $type"|"$language $gender $type of song"
 Confirm(more=$more):"no"
 Confirm(yes):"Yes I did"|"Yes please"|"I did"
 Confirm(no):"No I didn't"|"No thanks"|"Nope"

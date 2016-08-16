@@ -12,7 +12,7 @@ NoiseLevel=0
 OutputPath=results
 
 AddressPort=ws://localhost:8082/simpleds
-SavingFrequency=2500
+SavingFrequency=9
 
 LearningSteps=20000
 ExperienceSize=10000
@@ -21,5 +21,5 @@ DiscountFactor=0.7
 MinimumEpsilon=0.001
 BatchSize=32
 
-AndroidSupport=true
+AndroidSupport=false
 SocketServerPort=2015

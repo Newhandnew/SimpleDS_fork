@@ -8,7 +8,7 @@
 stty cols 120
 
 if [ $1 = "train" ] ; then
-   for i in $(seq 1 200) 
+   for i in $(seq 1 1000) 
    do
      xterm -geometry 120x50 -T "SimpleDS.Server" -e "ant SimpleDS" &
      sleep 2
@@ -16,8 +16,7 @@ if [ $1 = "train" ] ; then
      xterm -geometry 80x20 -T "SimpleDS.Client" -e "node runclient.js train"
      #node runclient.js train
      cd ../../
-     echo "iteration ${i}"
-     sleep 1
+     sleep 2.5
    done
    echo "done!!!"
 

@@ -9,7 +9,9 @@ stty cols 120
 
 if [ $1 = "train" ] ; then
    xterm -geometry 120x50 -T "SimpleDS.Server" -hold -e "ant SimpleDS" &
-   sleep 2
+   sleep 1
+   #xterm -geometry 120x50 -T "interactive" -hold -e "python android_client.py" &
+   sleep 1
    cd web/main
    xterm -geometry 80x20 -T "SimpleDS.Client" -hold -e "node runclient.js train"
    #node runclient.js train
