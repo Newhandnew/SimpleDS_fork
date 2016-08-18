@@ -1,5 +1,6 @@
-AskFor(more):Confirm(more=$more)
-Request(hmihy):Provide(gender=$gender,language=$language,type=$type)|Provide(gender=$gender,language=$language)|Provide(language=$language,type=$type)|Provide(gender=$gender)|Provide(language=$language)|Provide(type=$type)
+Salutation(greeting):Confirm(hello=$hello)
+Salutation(hay):Confirm(hay=$hay)
+Salutation(ask):Confirm(ask=$ask)
 Request(gender):Provide(gender=$gender)
 Request(language):Provide(language=$language)
 Request(type):Provide(type=$type)
@@ -24,6 +25,8 @@ Provide(gender=$gender,language=$language):"I need $language $gender song"|"I wo
 Provide(gender=$gender,type=$type):"I would like $gender $type song"|"I would love $gender $type song"|"$gender $type"
 Provide(language=$language,type=$type):"I want $language $type song"|"I am looking for $language $type song"|"$language $type"
 Provide(gender=$gender,language=$language,type=$type):"I am looking for $language $gender $type of song"|"We are looking for $language $gender $type song"|"$language $gender $type"|"$language $gender $type of song"
-Confirm(more=$more):"no"
+Confirm(hello=$hello):"$hello"
+Confirm(hay=$hay):"I am $hay"|"I feel $hay"|"$hay"
+Confirm(ask=$ask):"Yes|No"
 Confirm(yes):"Yes I did"|"Yes please"|"I did"
 Confirm(no):"No I didn't"|"No thanks"|"Nope"

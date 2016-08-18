@@ -1,0 +1,8 @@
+SYS:[Salutation(greeting)]"Hello!"
+USR:"hello"
+SYS:[Salutation(hay)]"How are you?"
+USR:"I feel bad"
+SYS:[Salutation(ask)]"Do you want to listen a song?"
+USR:"No"
+SYS:[Salutation(closing)]"Okay, talk to you soon. Bye!"
+USR:null

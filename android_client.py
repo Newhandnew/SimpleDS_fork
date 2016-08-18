@@ -7,7 +7,7 @@ HOST, PORT = "localhost", 2015
 
 # Create a socket (SOCK_STREAM means a TCP socket)
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.settimeout(1)
+sock.settimeout(2)
 timeout = 0
 while(timeout<3):
 	try:
@@ -22,8 +22,10 @@ while(timeout<3):
 		timeout = 3
 		while 1:
 			try:
-				received = sock.recv(1024)
-				print "RECIEVED:" , received
+				while 1:
+					received = sock.recv(1024)
+					if received != "":
+						print "RECIEVED:" , received
 			except:
 				pass
 			data = raw_input ( "SEND( TYPE q or Q to Quit):" )

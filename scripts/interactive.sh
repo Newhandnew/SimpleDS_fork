@@ -8,7 +8,7 @@
 stty cols 120
 
 if [ $1 = "train" ] ; then
-   for i in $(seq 1 200) 
+   for i in $(seq 1 50000) 
    do
      xterm -geometry 120x50 -T "SimpleDS.Server" -e "ant SimpleDS" &
      sleep 2

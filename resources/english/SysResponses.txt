@@ -1,8 +1,9 @@
 Salutation(greeting):"Hello"
-Request(hmihy):"How can I help you？"
-Request(gender):"What gender of a song would you like, male or female?"
-Request(language):"What language are you looking for, manderin or taiwanese?"
-Request(type):"What type of song are you looking for, romance or pop?"
+Salutation(hay):"How are you?"
+Salutation(ask):"Do you want to listen a song?"
+Request(gender):"What gender of a song would you like?"
+Request(language):"What language of song are you looking for?"
+Request(type):"What type of song are you looking for?"
 
 Apology(gender):"Sorry, I didn't get the gender."
 Apology(language):"Sorry, I didn't get the language."

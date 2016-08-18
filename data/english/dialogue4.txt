@@ -1,12 +1,14 @@
 SYS:[Salutation(greeting)]"Hello!"
-USR:null
-SYS:[Request(gender)]"What gender of a song would you like, male or female?"
+USR:"Hello"
+SYS:[Salutation(ask)]"Do you want to listen a song?"
+USR:"Yes"
+SYS:[Request(gender)]"What gender of a song would you like?"
 USR:"I am looking for male song"
 SYS:[ExpConfirm(gender=$gender)]"Did you say male?"
 USR:"Yes I did"
 SYS:[Apology(gender)]"Sorry, I didn't get that. What language?"
 USR:"male"
-SYS:[Request(type)]"What type of song are you looking for, romance or pop?"
+SYS:[Request(type)]"What type of song are you looking for?
 USR:"romance"
 SYS:[ExpConfirm(gender=$gender,type=$type)]"Did you say male romance song?"
 USR:"Yes I did"
