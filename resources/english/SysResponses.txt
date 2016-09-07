@@ -27,5 +27,5 @@ ImpConfirm(gender=$gender,language=$language,type=$type):"Okay, $language $gende
 
 Retrieve(info):"Let me see."
 Provide(unknown):"I'm very sorry, I didn't find a match with those preferences."
-Provide(known):"song X is an excellent choice. enjoy!"
-Salutation(closing):"Okay, talk to you soon. Bye!"
+Provide(known):"song banana is an excellent choice. enjoy!"
+Salutation(closing):"talk to you soon. Bye!"

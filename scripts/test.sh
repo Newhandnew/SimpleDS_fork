@@ -8,21 +8,26 @@
 stty cols 120
 
 if [ $1 = "train" ] ; then
-   xterm -geometry 120x50 -T "SimpleDS.Server" -hold -e "ant SimpleDS" &
-   sleep 2
-  # xterm -geometry 120x50 -T "interactive" -hold -e "python android_client.py" &
-   sleep 1
-   cd web/main
-   xterm -geometry 80x20 -T "SimpleDS.Client" -hold -e "node runclient.js train"
-   #node runclient.js train
-   cd ../../
+   for i in $(seq 1 50000) 
+   do
+     xterm -geometry 120x50 -T "SimpleDS.Server" -e "ant SimpleDS" &
+     sleep 2
+     cd web/main
+     xterm -geometry 80x20 -T "SimpleDS.Client" -e "node runclient.js train"
+     #node runclient.js train
+     cd ../../
+     echo "iteration ${i}"
+     sleep 1
+   done
+   echo "done!!!"
 
 elif [ $1 = "test" ] ; then 
-   xterm -geometry 120x50 -T "SimpleDS.Client" -hold -e "ant SimpleDS" &
+   ant SimpleDS &
+   sleep 3
+   python android_client.py &
    sleep 2
-   # python android_client.py &
    cd web/main
-   xterm -geometry 80x20 -T "SimpleDS.Client" -hold -e "node runclient.js test"
+   node runclient.js test
    #node runclient.js test
    cd ../../
 

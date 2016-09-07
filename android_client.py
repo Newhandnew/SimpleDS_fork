@@ -11,7 +11,7 @@ HOST, PORT = "localhost", 2015
 
 # Create a socket (SOCK_STREAM means a TCP socket)
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-sock.settimeout(10)
+sock.settimeout(0.5)
 timeout = 0
 r = sr.Recognizer()
 speech_command = 'google_speech -l en '
@@ -33,10 +33,13 @@ while(timeout<3):
 					received = sock.recv(1024)
 					if received != "":
 						print "RECIEVED:" , received
-						received = received[received.find('"'):]	# because server would return strange char
-						command = speech_command + received
-						print command
-						os.system(command)
+						print "split:", received.split('\x00')
+						for response in received.split('\x00'):
+							if response.find('"') != -1:
+								response = response[response.find('"'):]	# because server would return strange char
+								command = speech_command + response
+								print command
+								os.system(command)
 			except:
 				pass
 			with sr.Microphone() as source:
