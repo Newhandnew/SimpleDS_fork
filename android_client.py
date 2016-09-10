@@ -6,6 +6,8 @@ import socket
 import sys
 import os
 from time import sleep
+from  open_youtube import call_letitgo
+
 
 HOST, PORT = "localhost", 2015
 
@@ -40,6 +42,9 @@ while(timeout<3):
 								command = speech_command + response
 								print command
 								os.system(command)
+								if response.find('banana') != -1:
+									call_letitgo()
+
 			except:
 				pass
 			with sr.Microphone() as source:
