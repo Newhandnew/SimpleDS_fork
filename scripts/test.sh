@@ -34,4 +34,4 @@ elif [ $1 = "test" ] ; then
 else 
    echo "usage: run.sh (train | test)" 
 fi 
-
+trap "killall background" EXIT

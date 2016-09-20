@@ -16,7 +16,7 @@ SYS:[ExpConfirm(type=$type)]"Did you say pop?"
 USR:"Yes I did"
 SYS:[Retrieve(info)]"Let me see."
 USR:null
-SYS:[Provide(known)]"song X is an excellent choice. enjoy!"
+SYS:[Provide(known)]"song let it go is an excellent choice. enjoy!"
 USR:null
 SYS:[Salutation(closing)]"Okay, talk to you soon. Bye!"
 USR:null

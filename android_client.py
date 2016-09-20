@@ -7,6 +7,7 @@ import sys
 import os
 from time import sleep
 from  open_youtube import call_letitgo
+import subprocess
 
 
 HOST, PORT = "localhost", 2015
@@ -42,8 +43,10 @@ while(timeout<3):
 								command = speech_command + response
 								print command
 								os.system(command)
-								if response.find('banana') != -1:
-									call_letitgo()
+								if response.find('let it go') != -1:
+									# call_letitgo()
+									subprocess.Popen(['mpg321', '-q', 'Let-it-go.mp3'])
+									
 
 			except:
 				pass
